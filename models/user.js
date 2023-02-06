@@ -7,13 +7,17 @@ const userSchema = Schema({
         type:String,
         required:true,
     },
-    _id:{
-        type:String, //username
-        required:true,
-    },
     email:{
         type:String,
         required:true,
     },
+    password:{
+        type:String,
+        required:true,
+    },
     list:[{type:String}]
-})
+});
+
+const User = mongoose.model('user',userSchema);
+
+module.exports = User;

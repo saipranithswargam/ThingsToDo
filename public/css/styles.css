@@ -31,18 +31,25 @@ body{
 .home-content{
     text-align: center;
 }
+.home-content h1{
+    text-shadow: 1px 1px 5px #c2c5c4;
+}
 .home-content p{
     color: rgb(171, 173, 174);
     font-weight: 700;
     margin-top: 1rem;
 }
 
-.home-content button{
+.home-content .button{
     margin-top: 1rem;
     padding: 0.5rem 1.3rem;
     border-radius: 2px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
 }
-.home-content button:hover{
+.home-content .button:hover{
+    cursor: pointer;
     background-color: black;
     color: white;
     border: 1px solid white;
@@ -52,10 +59,12 @@ body{
 .single{
     font-size: 40px;
     font-weight: 700;
+    text-shadow: 1px 1px 5px #c2c5c4;
 }
 sup{
     font-weight: 700;
     font-size: xx-large;
+    text-shadow: 1px 1px 5px #c2c5c4;
 }
 #bg{
     position: absolute;
