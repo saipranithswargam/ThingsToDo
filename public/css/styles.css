@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    padding: 2% 9%;
+    min-height: 100vh;
+}
+.custom{
+    background-color: transparent !important;
+}
+.custom-col{
+    color: white !important;
+    font-weight: 700;
+}
+.navbar-toggler-icon {
+    background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(128, 128, 144, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+/*home page*/
+ .main{
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.home-content{
+    text-align: center;
+}
+.home-content p{
+    color: rgb(171, 173, 174);
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.home-content button{
+    margin-top: 1rem;
+    padding: 0.5rem 1.3rem;
+    border-radius: 2px;
+}
+.home-content button:hover{
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 2px;
+    margin-left: 2px;
+}
+.single{
+    font-size: 40px;
+    font-weight: 700;
+}
+sup{
+    font-weight: 700;
+    font-size: xx-large;
+}
+#bg{
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    overflow: hidden;
+}
