@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    min-height: 100vh;
+}
+.custom{
+    background-color: transparent !important;
+}
+.custom-col{
+    color: white !important;
+    font-weight: 700;
+}
+.single{
+    font-size: 40px;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px #c2c5c4;
+}
+sup{
+    font-weight: 700;
+    font-size: xx-large;
+    text-shadow: 1px 1px 5px #c2c5c4;
+}
+.greeting{
+    text-align: center;
+    color: white;
+}
+.greeting h1{
+    font-size: x-large;
+    font-weight: 700;
+}
+.cus-form{
+    background-color: transparent;
+    color: white;
+}
