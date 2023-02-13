@@ -8,6 +8,8 @@ Router.post("/create-collection",isAuth,userController.postCollectionPage);
 
 Router.get("/user/dashboard",isAuth,userController.getDashboard);
 
-Router.get("/:id",isAuth,userController.getProfilePage)
+Router.post("/view-more",isAuth,userController.postViewMore);
+
+Router.get("/view-more/:id",isAuth,userController.getViewMore);
 
 module.exports = Router;

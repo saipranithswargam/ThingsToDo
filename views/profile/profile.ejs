@@ -1,4 +1,33 @@
 <%- include("../partials/normal-header",{title:title}) -%>
-        <div class="greeting">
-            <h1>Good Morining, Name of the user</h1>
+
+<div class="greeting">
+    <h1>Good Morning,<%=userName%></h1>
+</div>
+<div class="collection-container">
+    <%collections.forEach((collection)=>{%>
+    <div class="collection-card">
+        <div
+            class="collection-title"
+            style="background-color: <%=collection.color%>"
+        >
+            <%=collection.name%>
         </div>
+        <%if(collection.list.length>=2){%> <%for(var i=0;i<2;i++){ %>
+        <div class="collection-todo">
+            <p><%=collection.list[i]%></p>
+        </div>
+        <%}%>
+        <form class="view-more" action="/view-more/<%=collection._id%>">
+            <button type="submit">view-more</button>
+        </form>
+        <% }%> <%if(collection.list.length==0){%>
+        <div class="collection-todo">
+            <p>No tasks in listed</p>
+        </div>
+        <form class="view-more" action="/view-more/<%=collection._id%>">
+            <button type="submit">Add-Task</button>
+        </form>
+        <% }%>
+    </div>
+    <%})%>
+</div>

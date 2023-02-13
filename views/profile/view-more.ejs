@@ -1,0 +1,15 @@
+<%- include("../partials/normal-header",{title:title}) -%>
+<div class="add-task">
+    <form method="post" action="/view-more">
+        <input name="id" value="<%=collection._id%>" type="hidden" />
+        <input name="taskAdded" />
+        <button type="submit">add</button>
+    </form>
+</div>
+<div class="task-wrapper">
+    <%collection.list.forEach((task)=>{ %>
+    <div class="task-card">
+        <p><%=task%></p>
+    </div>
+    <% }) %>
+</div>

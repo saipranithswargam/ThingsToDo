@@ -7,6 +7,12 @@ body{
     background-color: black;
     min-height: 100vh;
 }
+.logout{
+    background-color: transparent;
+    color: white;
+    margin: auto 0.2rem;
+    height: 100%;
+}
 .custom{
     background-color: transparent !important;
 }
@@ -114,7 +120,65 @@ sup{
     color: white;
     border: 1px solid white;
 }
+.collection-container{
+    width: 95vw;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 1rem auto;
+    gap:0.5rem;
+}
+.collection-card{
+    background-color: rgb(40, 40, 40);
+    margin-bottom: 1rem;
+    border-radius: 7px;
+    border:1px solid slategray;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.collection-title{
+    color: white;
+    text-align: center;
+    border:1px solid slategray;
+    font-weight: 700;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    text-transform: uppercase;
+}
+.collection-todo{
+    padding: 0.2rem;
+    color: white;
+}
+.collection-todo p{
+    margin: 0;
+}
+.view-more button{
+    width: 100%;
+    background-color: black;
+    color: white;
+    border:none;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    font-weight: 700;
+}
+.view-more{
+    bottom: 0;
+    margin-top: auto;
+}
 
+.add-task{
+    text-align: center;
+}
+.task-card{
+    color: white;
+    text-align: center;
+}
+@media(max-width:1000px){
+    .collection-container{
+        grid-template-columns: 1fr;
+        width: 90vw;
+    }
+} 
 @media(max-width:960px){
     .collection-from{
         width: 89vw;
@@ -134,5 +198,8 @@ sup{
     }
     .form-div button{
         width: 85%;
+    }
+    .collection-container{
+        width: 98vw;
     }
 }

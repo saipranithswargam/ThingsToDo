@@ -41,7 +41,12 @@
                         class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll abs"
                         style="--bs-scroll-height: 100px"
                     >
-                        <%if(title!=="collectionPage") {%>
+                        <%if(title==="dashboard") {%>
+                        <li class="nav-item">
+                            <form class="logout" method="post" action="/logout">
+                                <button class="logout">Logout</button>
+                            </form>
+                        </li>
                         <li class="nav-item">
                             <a
                                 class="nav-link"
@@ -51,7 +56,8 @@
                                 >CreateCollection</a
                             >
                         </li>
-                        <% }%> <%if(title==="collectionPage") {%>
+
+                        <% }%> <%if(title!=="dashboard") {%>
                         <li class="nav-item">
                             <a
                                 class="nav-link custom-col"

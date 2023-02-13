@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const Collection = Schema({
+const collectionSchema = Schema({
     name: {
         type: String,
         required: true,
@@ -15,5 +15,7 @@ const Collection = Schema({
         required: true,
     },
 });
+
+const Collection = mongoose.model('collection',collectionSchema)
 
 module.exports = Collection;

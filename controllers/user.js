@@ -1,16 +1,60 @@
-exports.getProfilePage = ((req,res)=>{
-    res.send("user homepage");
+const Collection = require("../models/collection");
+const mongoose = require('mongoose');
+const { collection } = require("../models/collection");
+exports.getCollectionPage = (req, res) => {
+    res.render("profile/create-collection.ejs", { title: "collectionPage" });
+};
+exports.getDashboard = (req, res) => {
+    const userId = req.user._id;
+    Collection.find({ userId: userId })
+    .then((collections) => {
+        console.log(new Date().toLocaleTimeString()); //greatings based on time is not yet done
+        const userName = req.user.name;
+        res.render("profile/profile", {title: "dashboard",
+            collections: collections,
+            userName: userName,
+        });
+    });
+};
+
+exports.postCollectionPage = (req, res) => {
+    const collectionName = req.body.collectionName;
+    const userId = req.user._id;
+    const color = req.body.color;
+    const collection = new Collection({
+        name: collectionName,
+        color: color,
+        userId: userId,
+    });
+    collection
+        .save()
+        .then((collection) => {
+            res.redirect("/user/dashboard");
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+};
+
+exports.getViewMore = ((req,res)=>{
+    const objId = mongoose.Types.ObjectId(req.params.id);
+    Collection.findById(objId).then(collection=>{
+        res.render("profile/view-more",{title:"ThingsToDo",collection:collection});
+    }).catch(err=>{
+        console.log(err);
+    })
+
 })
 
-exports.getCollectionPage = ((req,res)=>{
-    res.render("profile/create-collection.ejs",{title:"collectionPage"})
-})
-
-exports.getDashboard = ((req,res)=>{
-    res.render("profile/profile",{title:"dashboard"});
-})
-
-exports.postCollectionPage = ((req,res)=>{
-    console.log(req.body.color,req.body.collectionName)
-    res.send("ok")
+exports.postViewMore = ((req,res)=>{
+    const NewTask = req.body.taskAdded;
+    const id = req.body.id;
+    const objId = mongoose.Types.ObjectId(id);
+    Collection.findById(objId).then(collection=>{
+        collection.list.push(NewTask);
+        return collection.save();
+    }).then(result=>{
+        console.log(result);
+        res.redirect(`/view-more/${id}`);
+    })
 })
