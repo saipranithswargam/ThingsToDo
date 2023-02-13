@@ -167,12 +167,61 @@ sup{
 }
 
 .add-task{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
 }
 .task-card{
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
+    width: 50vw;
+    margin: 0.2rem auto;
+    background-color: #b1b6b3;
+    padding: 0.5rem 1rem;
+    border-radius: 7px;
+    align-items: flex-end;
 }
+.add-task-form button{
+    background: transparent;
+    color:rgba(255, 255, 255, 0.975);
+}
+.change{
+   scale: 1.8 !important;
+}
+.button-in{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+.button-in input{
+    padding: 0.5rem 1rem;
+    border-radius: 7px; 
+    width: 30vw;
+}
+.task{
+    display: inline-block;
+}
+.task-completed-form{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+}
+.delete-button{
+    align-self: baseline;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    border: none;
+}
+.delete-button[type=checkbox]:checked~.task{
+    text-decoration: line-through;
+  }
 @media(max-width:1000px){
     .collection-container{
         grid-template-columns: 1fr;

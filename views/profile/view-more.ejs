@@ -1,15 +1,24 @@
 <%- include("../partials/normal-header",{title:title}) -%>
 <div class="add-task">
-    <form method="post" action="/view-more">
+    <form class="add-task-form" method="post" action="/view-more">
         <input name="id" value="<%=collection._id%>" type="hidden" />
-        <input name="taskAdded" />
-        <button type="submit">add</button>
+        <div class="button-in">
+            <input name="taskAdded" />
+            <button class="task-button" type="submit">
+                <i class="fa-solid fa-circle-plus change"> </i>
+            </button>
+        </div>
     </form>
-</div>
-<div class="task-wrapper">
-    <%collection.list.forEach((task)=>{ %>
-    <div class="task-card">
-        <p><%=task%></p>
+    <div class="task-wrapper">
+        <%for(var i=0;i<collection.list.length;i++){ %>
+        <div class="task-card">
+            <form class="task-completed-form" action="/delete/task" method="post">
+                
+                <input type="hidden" name="collectionId" value="<%=collection._id%>">
+                <input name="index" type="hidden" value="<%=i%>">
+                <input type="checkbox" class="delete-button" type="submit" onChange="this.form.submit()"><p class="task"><%=collection.list[i]%></p>
+            </form>
+        </div>
+        <% } %>
     </div>
-    <% }) %>
 </div>

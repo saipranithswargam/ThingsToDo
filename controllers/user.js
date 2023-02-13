@@ -56,5 +56,22 @@ exports.postViewMore = ((req,res)=>{
     }).then(result=>{
         console.log(result);
         res.redirect(`/view-more/${id}`);
+    }).catch(err=>{
+        console.log(err);
+    })
+})
+
+exports.postDeleteTask = ((req,res)=>{
+    const id = req.body.collectionId;
+    const index = req.body.index;
+    const objId = mongoose.Types.ObjectId(id);
+    Collection.findById(objId).then(collection=>{
+        collection.list.splice(index,1);
+        return collection.save();
+    }).then(result=>{
+        console.log(result);
+        res.redirect(`/view-more/${id}`);
+    }).catch(err=>{
+        console.log(err);
     })
 })
