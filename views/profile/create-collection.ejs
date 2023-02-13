@@ -1,7 +1,17 @@
-<%- include("../partials/normal-header") -%>
+<%- include("../partials/normal-header",{title:title}) -%>
 <div class="collection-from">
-    <form action="/create-collection" method="post">
-        <input name="collectionName" placeholder="Collection Name"/>
-        <button type="submit">Create Collection</button>
-    </form>
+    <div class="form-div">
+        <div class="heading">
+            <h3>Create Your Collection</h3>
+        </div>
+        <form action="/create-collection" method="post">
+            <input name="collectionName" class="text-inp" placeholder=" Collection Name"/>
+            <label>Theme for collection</label>
+            <input class="color" type="color" name="color" />
+            <button type="submit">Create Collection</button>
+        </form>
+    </div>
+    <div class="image-container">
+        <img src="/images/customise.svg" />
+    </div>
 </div>

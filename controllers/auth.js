@@ -46,7 +46,7 @@ exports.postLogin = (req,res)=>{
                     console.log(err);
                     return res.redirect("/login");
                     }
-                 return res.render("profile/profile");
+                 return res.redirect("/user/dashboard")
                 })
             }
             res.redirect('/login');

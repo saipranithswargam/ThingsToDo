@@ -41,6 +41,7 @@
                         class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll abs"
                         style="--bs-scroll-height: 100px"
                     >
+                        <%if(title!=="collectionPage") {%>
                         <li class="nav-item">
                             <a
                                 class="nav-link"
@@ -50,7 +51,19 @@
                                 >CreateCollection</a
                             >
                         </li>
+                        <% }%> <%if(title==="collectionPage") {%>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link custom-col"
+                                aria-current="page"
+                                href="/user/dashboard"
+                                >Home</a
+                            >
+                        </li>
+                        <% }%>
                     </ul>
                 </div>
             </div>
         </nav>
+    </body>
+</html>
