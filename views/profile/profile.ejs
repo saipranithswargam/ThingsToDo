@@ -20,6 +20,14 @@
         <form class="view-more" action="/view-more/<%=collection._id%>">
             <button type="submit">view-more</button>
         </form>
+        <% }%> <%if(collection.list.length<2 && collection.list.length>0){%> <%for(var i=0;i<2;i++){ %>
+        <div class="collection-todo">
+            <p><%=collection.list[i]%></p>
+        </div>
+        <%}%>
+        <form class="view-more" action="/view-more/<%=collection._id%>">
+            <button type="submit">view-more</button>
+        </form>
         <% }%> <%if(collection.list.length==0){%>
         <div class="collection-todo">
             <p>No tasks in listed</p>

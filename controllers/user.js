@@ -54,7 +54,6 @@ exports.postViewMore = ((req,res)=>{
         collection.list.push(NewTask);
         return collection.save();
     }).then(result=>{
-        console.log(result);
         res.redirect(`/view-more/${id}`);
     }).catch(err=>{
         console.log(err);
@@ -69,7 +68,6 @@ exports.postDeleteTask = ((req,res)=>{
         collection.list.splice(index,1);
         return collection.save();
     }).then(result=>{
-        console.log(result);
         res.redirect(`/view-more/${id}`);
     }).catch(err=>{
         console.log(err);
