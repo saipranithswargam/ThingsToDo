@@ -242,6 +242,15 @@ sup{
 .delete-button[type=checkbox]:checked~.task{
     text-decoration: line-through;
   }
+.collection-customise button{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+.collection-customise{
+    position: absolute;
+    left: 2px;
+}
 @media(max-width:1120px){
     .task-card{
         width: 70vw;

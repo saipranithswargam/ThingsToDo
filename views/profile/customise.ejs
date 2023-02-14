@@ -1,0 +1,18 @@
+<%- include("../partials/normal-header",{title:title}) -%>
+<div class="collection-from">
+    <div class="form-div">
+        <div class="heading">
+            <h3>Customise Collection</h3>
+        </div>
+        <form action="/customise/collection" method="post">
+            <input name="collectionName" class="text-inp" placeholder=" Collection Name" value="<%=collection.name%>"/>
+            <label>Theme for collection</label>
+            <input class="color" type="color" name="color" value="<%=collection.color%>"/>
+            <input type="hidden" name="id" value="<%=collection._id%>">
+            <button type="submit">Customise</button>
+        </form>
+    </div>
+    <div class="image-container">
+        <img src="/images/customise.svg" />
+    </div>
+</div>

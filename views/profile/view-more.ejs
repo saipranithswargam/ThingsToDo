@@ -16,7 +16,7 @@
                 
                 <input type="hidden" name="collectionId" value="<%=collection._id%>">
                 <input name="index" type="hidden" value="<%=i%>">
-                <input type="checkbox" class="delete-button" type="submit" onChange="this.form.submit()"><p class="task"><%=collection.list[i]%></p>
+                <input type="checkbox" title="Task Completed..?" class="delete-button" type="submit" onChange="this.form.submit()"><p class="task"><%=collection.list[i]%></p>
             </form>
         </div>
         <% } %>

@@ -15,11 +15,26 @@
             class="collection-title"
             style="background-color: <%=collection.color%>"
         >
+            <form
+                class="collection-customise"
+                method="get"
+                action="/customise/collection/<%=collection._id%>"
+            >
+                <button type="submit">
+                    <i title="customise collection" class="fa-sharp fa-solid fa-gear"></i>
+                </button>
+            </form>
             <%=collection.name%>
-            <form class="collection-delete" method="post" action="/delete/collection">
+            <form
+                class="collection-delete"
+                method="post"
+                action="/delete/collection"
+            >
                 <input value="<%=collection._id%>" name="id" type="hidden" />
                 <button type="submit">
-                    <span title="delete collection"><i class="fa-sharp fa-solid fa-trash"></i></span>
+                    <span title="delete collection"
+                        ><i class="fa-sharp fa-solid fa-trash"></i
+                    ></span>
                 </button>
             </form>
         </div>

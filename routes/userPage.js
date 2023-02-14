@@ -14,6 +14,11 @@ Router.get("/view-more/:id",isAuth,userController.getViewMore);
 
 Router.post("/delete/task",isAuth,userController.postDeleteTask);
 
-Router.post("/delete/collection",isAuth,userController.postDeleteCollection)
+Router.post("/delete/collection",isAuth,userController.postDeleteCollection);
+
+Router.post("/customise/collection",isAuth,userController.postCustomiseCollection)
+
+Router.get("/customise/collection/:id",isAuth,userController.getCustomiseCollection)
+
 
 module.exports = Router;

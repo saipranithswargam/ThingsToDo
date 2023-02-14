@@ -84,3 +84,30 @@ exports.postDeleteCollection = ((req,res)=>{
         console.log(err);
     })
 })
+
+exports.getCustomiseCollection = ((req,res)=>{
+    const id = req.params.id;
+    const objId = mongoose.Types.ObjectId(id);
+    Collection.findById(objId).then(collection=>{
+        res.render("profile/customise",{collection:collection,title:"CustomiseCollection"});
+    }).catch(err=>{
+        console.log(err);
+    })
+})
+
+exports.postCustomiseCollection = ((req,res)=>{
+    const id = req.body.id;
+    const changedColor = req.body.color;
+    const changedName = req.body.collectionName;
+    const objId = mongoose.Types.ObjectId(id);
+    Collection.findById(objId).then(collection=>{
+        collection.name = changedName;
+        collection.color = changedColor;
+        return collection.save();
+  }).then(result=>{
+    res.redirect("/user/dashboard");
+  })
+  .catch(err=>{
+    console.log(err)
+  })
+})
