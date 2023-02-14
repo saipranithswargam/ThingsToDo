@@ -3,6 +3,11 @@
 <div class="greeting">
     <h1>Good Morning,<%=userName%></h1>
 </div>
+<% if(collections.length==0) {%>
+<div class="empty-collection">
+    <h1>No Collections Found</h1>
+</div>
+<%}%>
 <div class="collection-container">
     <%collections.forEach((collection)=>{%>
     <div class="collection-card">
@@ -11,6 +16,12 @@
             style="background-color: <%=collection.color%>"
         >
             <%=collection.name%>
+            <form class="collection-delete" method="post" action="/delete/collection">
+                <input value="<%=collection._id%>" name="id" type="hidden" />
+                <button type="submit">
+                    <span title="delete collection"><i class="fa-sharp fa-solid fa-trash"></i></span>
+                </button>
+            </form>
         </div>
         <%if(collection.list.length>=2){%> <%for(var i=0;i<2;i++){ %>
         <div class="collection-todo">
@@ -20,7 +31,8 @@
         <form class="view-more" action="/view-more/<%=collection._id%>">
             <button type="submit">view-more</button>
         </form>
-        <% }%> <%if(collection.list.length<2 && collection.list.length>0){%> <%for(var i=0;i<2;i++){ %>
+        <% }%> <%if(collection.list.length<2 && collection.list.length>0){%>
+        <%for(var i=0;i<2;i++){ %>
         <div class="collection-todo">
             <p><%=collection.list[i]%></p>
         </div>

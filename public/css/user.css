@@ -128,7 +128,7 @@ sup{
     gap:0.5rem;
 }
 .collection-card{
-    background-color: rgb(40, 40, 40);
+    background-color: rgb(57, 57, 57);
     margin-bottom: 1rem;
     border-radius: 7px;
     border:1px solid slategray;
@@ -144,6 +144,10 @@ sup{
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 .collection-todo{
     padding: 0.2rem;
@@ -151,6 +155,21 @@ sup{
 }
 .collection-todo p{
     margin: 0;
+}
+.collection-delete{
+    display: inline-block;
+    position: absolute;
+    right: 2px;
+}
+.collection-delete button{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+.empty-collection{
+    color: white;
+    text-align: center;
+    margin-top: 2rem;
 }
 .view-more button{
     width: 100%;
@@ -172,6 +191,7 @@ sup{
     justify-content: center;
     align-items: center;
     gap: 1.2rem;
+    margin-top: 1.2rem;
 }
 .task-card{
     color: rgb(0, 0, 0);
@@ -222,6 +242,14 @@ sup{
 .delete-button[type=checkbox]:checked~.task{
     text-decoration: line-through;
   }
+@media(max-width:1120px){
+    .task-card{
+        width: 70vw;
+    }
+    .button-in input{
+        width: 45vw;
+    }
+}
 @media(max-width:1000px){
     .collection-container{
         grid-template-columns: 1fr;
@@ -239,6 +267,15 @@ sup{
     }
     .form-div{
         width: 75%;
+    }
+    .task-card{
+        width: 95vw;
+    }
+    .button-in input{
+        width: 75vw;
+    }
+    .add-task{
+        margin-top: 2.5rem;
     }
 }
 @media(max-width:420px){

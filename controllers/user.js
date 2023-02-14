@@ -39,7 +39,7 @@ exports.postCollectionPage = (req, res) => {
 exports.getViewMore = ((req,res)=>{
     const objId = mongoose.Types.ObjectId(req.params.id);
     Collection.findById(objId).then(collection=>{
-        res.render("profile/view-more",{title:"ThingsToDo",collection:collection});
+        res.render("profile/view-more",{title:"viewmore",collection:collection});
     }).catch(err=>{
         console.log(err);
     })
@@ -69,6 +69,17 @@ exports.postDeleteTask = ((req,res)=>{
         return collection.save();
     }).then(result=>{
         res.redirect(`/view-more/${id}`);
+    }).catch(err=>{
+        console.log(err);
+    })
+})
+
+exports.postDeleteCollection = ((req,res)=>{
+    const id = req.body.id;
+    console.log(id);
+    const objId = mongoose.Types.ObjectId(id);
+    Collection.findByIdAndDelete(objId).then(result=>{
+        res.redirect("/user/dashboard");
     }).catch(err=>{
         console.log(err);
     })
