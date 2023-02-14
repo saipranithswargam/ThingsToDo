@@ -72,7 +72,89 @@ sup{
     z-index: -1;
     overflow: hidden;
 }
+.reset-card{
+    width: 40vw;
+    height:40vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    margin-top: 1rem;
+    border: 1px solid white;
+    border-radius: 7px;
+    box-shadow: 1px 0px 16px #b1b6b3;
+}
+.reset-card input{
+    width: 50%;
+    margin: 0 auto;
+    padding: 0.5rem;
+}
+.reset-card button{
+    width: 50%;
+    margin: 0 auto;
+    padding: 0.2rem;
+}
+.reset-card button:hover{
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+}
+.title-reset h2{
+    color: white;
+    text-align: center;
+}
+.title-reset{
+    top: 0;
+    position: absolute;
+    left: 30%;
+}
 
+@media(max-width:1200px){
+    .reset-card{
+        width: 50vw;
+        margin-top: 2.4rem;
+    }
+
+}
+@media(max-width:870px){
+    .reset-card{
+        width: 70vw;
+        margin-top: 2.8rem;
+    }
+}
+@media(max-width:600px){
+    .reset-card{
+        width: 88vw;
+        margin-top: 3.5rem;
+    }
+    .reset-card input{
+        width: 60%;
+    }
+    .reset-card button{
+        width: 50%;
+    }
+    body{
+        padding: 0;
+    }
+}
+@media(max-width:420px){
+    .reset-card{
+        width: 90vw;
+        height: 60vh;
+    }
+    .title-reset{
+        left: 23%;
+    }
+    .reset-card input{
+        width: 70%;
+    }
+    .reset-card button{
+        width: 60%;
+    }
+
+}
 @media(max-width:992px){
     .abs{
         position: absolute;

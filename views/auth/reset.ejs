@@ -1,6 +1,8 @@
 <%- include("../partials/header") %>
-
-<form action="/reset" method="post">
-    <input type="email" name="email" placeholder="email">
-    <button type="submit">Send</button>
-</form>
+    <form class="reset-card" action="/reset" method="post">
+        <div class="title-reset">
+            <h2>Reset Password</h2>
+        </div>
+        <input type="email" name="email" placeholder="email" />
+        <button type="submit">Send</button>
+    </form>
