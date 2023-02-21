@@ -107,7 +107,13 @@ img{
     width: 100%;
     height: 100%;
 }
-
+.error{
+    width: fit-content;
+    padding: 0.5rem 0.7rem;
+    text-align: center;
+    margin: 0 auto;
+    color:red;
+}
 @media(max-width:900px){
     .card{
         width: 95vw;

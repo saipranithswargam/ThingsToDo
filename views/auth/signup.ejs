@@ -58,10 +58,15 @@
             <div class="card">
                 <div class="form-signup">
                     <h1>Welcome</h1>
+                    <div class="error"><%=errorMessage%></div>
                     <form method="post" action="/signup">
                         <input placeholder="name" type="text" name="name" />
-                        <input placeholder="email" type="email" name="email"/>
-                        <input placeholder="password" type="password" name="password"/>
+                        <input placeholder="email" type="email" name="email" />
+                        <input
+                            placeholder="password"
+                            type="password"
+                            name="password"
+                        />
                         <button type="submit">Sign Up</button>
                     </form>
                 </div>

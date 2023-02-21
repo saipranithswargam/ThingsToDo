@@ -3,6 +3,7 @@ require("dotenv").config();
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
+const flash = require('connect-flash')
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
 const authRoutes = require("./routes/auth");
@@ -12,6 +13,7 @@ const errorController = require("./controllers/error");
 const User = require("./models/user");
 
 const app = express();
+app.use(flash());
 const store = new MongoDBStore({
     uri: process.env.DB_URI,
     collection: "session",
